@@ -1,0 +1,88 @@
+/* 全体 */
+#app {
+  display: flex;
+  height: 100vh;
+  gap: 10px;
+}
+
+/* 左パネル */
+#left_panel {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  border-right: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* 盤面：中央 */
+#board_container {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* 上下に並べる */
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* 右パネル：AI設定 */
+#right_panel {
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  border-left: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+#setting_panel label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+
+/* 盤面のグリッド */
+.board {
+  display: grid;
+  grid-template-columns: repeat(8, 50px);
+  grid-template-rows: repeat(8, 50px);
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  background: green;
+  border: 1px solid black;
+}
+
+.cell.hint {
+  background-color: rgba(0, 255, 0, 0.35);
+}
+
+.piece_black {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: black;
+  border: 1px solid white;
+}
+
+.piece_white {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid black;
+}
+
+/* 非表示用 */
+.hidden {
+  display: none;
+}

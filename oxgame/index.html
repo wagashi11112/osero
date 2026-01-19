@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Othello</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="app">
+        <!-- 左：操作パネル -->
+        <div id="left_panel">
+            <button id="resetbtn">リセット</button>
+            <button id="ai_toggle">AI: OFF</button>
+
+            <label>
+                <input type="checkbox" id="ai_instant">
+                AI 即うち
+            </label>
+
+            <select id="select_ai">
+                <option value="random">ランダムAI</option>
+                <option value="greedy">貪欲</option>
+                <option value="eval">評価</option>
+            </select>
+        </div>
+
+        <!-- 中央：盤面 -->
+        <div id="board_container">
+            <!-- 石の数表示 -->
+            <div id="score_board">
+                白: <span id="white_count">0</span> / 黒: <span id="black_count">0</span>
+            </div>
+
+            <!-- 盤面本体 -->
+            <div class="board"></div>
+
+            <!-- 勝敗表示 -->
+            <div id="game_result"></div>
+        </div>
+
+        <!-- 右：AI設定パネル -->
+        <div id="right_panel">
+            <button id="ai_vs_ai_toggle">AI VS AI: OFF</button>
+            <div id="setting_panel" class="hidden">
+                <label>
+                    モード:
+                    <button id="ai_fight_mode">観戦</button>
+                </label>
+                <label>
+                    回数:
+                    <input type="number" id="ai_fight_count" value="10" min="1" max="2000">
+                </label>
+                <label>
+                    白AI:
+                    <select id="ai_fighter_white">
+                        <option value="random">ランダム</option>
+                        <option value="greedy">貪欲</option>
+                        <option value="eval">評価</option>
+                    </select>
+                </label>
+                <label>
+                    黒AI:
+                    <select id="ai_fighter_black">
+                        <option value="random">ランダム</option>
+                        <option value="greedy">貪欲</option>
+                        <option value="eval">評価</option>
+                    </select>
+                </label>
+                <label>
+                    即うち:<input type="checkbox" id="ai_fight_instant">
+                </label>
+                <button id="ai_fight_start">開始</button>
+                <button id="ai_fight_cancelled">キャンセル</button>
+                <div id="fight_result_panel" class="hidden">
+                    <h3>AI対戦結果</h3>
+                    <div id="fight_result_content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
